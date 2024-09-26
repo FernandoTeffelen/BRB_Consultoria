@@ -1,0 +1,22 @@
+{
+  "reservas": [
+    {
+      "id": "af83",
+      "nome": "fernando",
+      "email": "teste@gmail.com",
+      "dataEntrada": "2024-10-15",
+      "dataSaida": "2024-10-20",
+      "observacoes": "teste",
+      "adultos": "2",
+      "criancas": "1"
+    }
+  ],
+  "contas": [
+    {
+      "id": "c410",
+      "nome": "fernando",
+      "email": "teste@gmail.com",
+      "senha": "123"
+    }
+  ]
+}
