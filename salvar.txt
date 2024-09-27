@@ -1,0 +1,58 @@
+<div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <?php
+                                // Consulta para buscar imagens, rua e bairro do banco de dados
+                                include '../connect/db_connection.php';
+
+                                $result = $conn->query("SELECT Nome, Email, Imagem FROM usuarios ORDER BY id DESC");
+
+                                if ($result && $result->num_rows > 0) {
+                                    $active = true;
+                                    while ($row = $result->fetch_assoc()) {
+                                        // Verifica se a Imagem existe para evitar erros
+                                        if (!empty($row['Imagem'])) {
+                                            echo '<div class="carousel-item ' . ($active ? 'active' : '') . '">';
+                                            echo '<img class="d-block w-100" src="../uploads/' . htmlspecialchars($row['Imagem']) . '" alt="Image">';
+                                            echo '</div>';
+                                            $active = false; // Apenas a primeira Imagem será "ativa"
+                                        }
+                                    }
+                                } else {
+                                    echo '<div class="carousel-item active">';
+                                    echo '<img class="d-block w-100" src="../assets/default-image.jpg" alt="No images available">';
+                                    echo '</div>';
+                                }
+                                ?>
+                            </div>
+
+                            <!-- Carousel controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Imóvel: <?php echo isset($row['Nome']) ? htmlspecialchars($row['Nome']) : 'Desconhecido'; ?></h5>
+                                <p>Bairro: <?php echo isset($row['Email']) ? htmlspecialchars($row['Email']) : 'Desconhecido'; ?></p>
+                            </div>
+                        </div>
+
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#">View Options</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>

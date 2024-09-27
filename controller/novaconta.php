@@ -31,12 +31,13 @@
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Criar Conta</button><br>
-                <a href="login.html" class="btn btn-primary mt-3" style="margin-bottom: 5%;">Voltar</a>
+                <a href="login.php" class="btn btn-primary mt-3" style="margin-bottom: 5%;">Voltar</a>
             </div>
         </form>
     </div>
 
     <script src="../script/signup.js"></script> <!-- Referência ao arquivo JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

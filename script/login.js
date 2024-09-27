@@ -17,7 +17,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
                 errorMessage.textContent = 'Senha incorreta';
             } else {
                 // Login bem-sucedido
-                window.location.href = 'reservas.html';
+                window.location.href = '../controller/reservas.php';
             }
         })
         .catch(error => {

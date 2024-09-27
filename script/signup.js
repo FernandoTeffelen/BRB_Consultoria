@@ -28,7 +28,7 @@ document.getElementById('signupForm').addEventListener('submit', function (event
             .then(response => response.json())
             .then(() => {
                 alert('Conta criada com sucesso!');
-                window.location.href = 'login.html'; // Redireciona para a página de login
+                window.location.href = '../controller/login.php'; // Redireciona para a página de login
             })
             .catch((error) => {
                 console.error('Erro ao criar a conta:', error);

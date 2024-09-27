@@ -1,88 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas FODAS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>BRB - Consultoria Imobiliária</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h2 class="text-center">Lista de Reservas</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Data de Entrada</th>
-                    <th>Data de Saída</th>
-                    <th>Adultos</th>
-                    <th>Crianças</th>
-                    <th>Observações</th>
-                </tr>
-            </thead>
-            <tbody id="reservasTableBody">
-                <!-- As reservas serão preenchidas aqui -->
-            </tbody>
-        </table>
-
-
-
-        <a href="../index.html" class="btn btn-primary mt-3" style="margin-bottom: 5%;">Voltar</a>
-    </div>
-
-
-    <!-- Booking Form Section -->
-    <section class="booking-form py-5">
-        <div class="container">
-            <h4 class="text-center mb-4">Faça Sua Reserva</h4>
-            <form id="bookingForm">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <input type="text" class="form-control" name="nome" placeholder="Nome" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <input type="email" class="form-control" name="email" placeholder="E-mail" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <p>Data de ida</p>
-                        <input type="date" class="form-control" name="dataEntrada" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <p>Data de ida</p>
-                        <input type="date" class="form-control" name="dataSaida" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 mb-3">
-                        <textarea class="form-control" name="observacoes" placeholder="Observações" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 mb-3">
-                        <input type="number" class="form-control" name="adultos" placeholder="Adultos" required>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <input type="number" class="form-control" name="criancas" placeholder="Crianças" required>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+    <!-- Navigation-->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#!">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
+            </div>
         </div>
-        </form>
+    </nav> -->
+    
+    <!-- Product section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <a href="controller/login.php" class="btn btn-primary mt-3 styles" style="margin-bottom: 2%;">Login</a>
+            <a href="controller/reservas.php" class="btn btn-primary mt-3" style="margin-bottom: 2%;">Reservas(para testes)</a>
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="assets/foto-perfil-BRB.jpg"
+                        alt="..." /></div>
+                <div class="col-md-6">
+                    <!-- <div class="small mb-1">SKU: BST-498</div> -->
+                    <h1 class="display-5 fw-bolder">Beatriz Ribeiro de Borba</h1>
+                    <div class="fs-5 mb-5">
+                        <a class="dropdown-item entre-em-contato" style="font-size: 15px; text-decoration: underline;"
+                            href="https://l.instagram.com/?u=https%3A%2F%2Fwww.foxterciaimobiliaria.com.br%2F%3Fcorretor%3Dbeatriz-borba&e=AT0VIaqE0bfJWqL2K4xEDzSAT-SFMcO3PAwa865PrDbJBo_4TxhWwKZmJy3pduB2iGxJokRRKGeoLtuLNFhTC5Cpq7Tj5w4542Nhhw">Compre
+                            comigo pela Foxter</a>
+                        <a class="dropdown-item entre-em-contato" style="font-size: 15px; text-decoration: underline;"
+                            href="https://wa.me/5551999446375/">Entre em contato comigo pelo whatsApp</a>
+                    </div>
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem
+                        quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis
+                        delectus ipsam minima ea iste laborum vero?</p>
+                    <!-- <div class="d-flex">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </div> -->
+                </div>
+            </div>
         </div>
     </section>
 
-
+    <!-- Related items section-->
     <section class="py-5 bg-light">
         <div class="container px-4 px-lg-5 mt-5">
             <h2 class="fw-bolder mb-4">Principais condomínios a venda</h2>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
-
 
                 <div class="col mb-5">
                     <div class="card h-100">
@@ -91,15 +95,15 @@
                             <div class="carousel slide" data-bs-ride="carousel" id="ads">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" src="../assets/foto-perfil-BRB.jpg" alt="First slide">
+                                        <img class="d-block w-100" src="assets/foto-perfil-BRB.jpg" alt="First slide">
                                     </div>
 
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="../assets/Rosto-wpp.jpeg" alt="Second slide">
+                                        <img class="d-block w-100" src="assets/Rosto-wpp.jpeg" alt="Second slide">
                                     </div>
 
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="../assets/foto-su.enc" alt="Third slide">
+                                        <img class="d-block w-100" src="assets/foto-su.enc" alt="Third slide">
                                     </div>
                                 </div>
                             </div>
@@ -123,20 +127,16 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View
-                                    options</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Sale badge-->
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            Sale
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                         </div>
                         <!-- Product image-->
                         <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
@@ -160,8 +160,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
-                                    cart</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -169,8 +168,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Sale badge-->
-                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
-                            Sale
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                         </div>
                         <!-- Product image-->
                         <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
@@ -186,8 +184,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
-                                    cart</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -215,8 +212,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
-                                    cart</a>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
                             </div>
                         </div>
                     </div>
@@ -224,17 +220,15 @@
             </div>
         </div>
     </section>
+    <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; BRB - Consultoria Imobiliária 2024 from Fernando De
                 Borba Van Teffelen</p>
         </div>
     </footer>
-
-    <!-- Referência ao arquivo JavaScript -->
-    <script src="../script/script.js"></script>
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

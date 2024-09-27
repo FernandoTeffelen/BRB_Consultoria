@@ -24,10 +24,10 @@ document.getElementById('bookingForm')?.addEventListener('submit', function(even
     });
 });
 
-// Carregamento das reservas na página reservas.html
-if (window.location.pathname.endsWith('controller/reservas.html')) {
+// Carregamento das reservas na página reservas.php
+if (window.location.pathname.endsWith('../controller/reservas.php')) {
     window.onload = function() {
-        fetch('http://localhost:3000/reservas')
+        fetch('http://localhost:3000/reservas.php')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erro ao carregar reservas: ' + response.statusText);

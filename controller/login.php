@@ -9,10 +9,17 @@
     <link rel="stylesheet" href="../style/cadastro.css">
 </head>
 
+<?php
+include '../connect/db_connection.php';
+
+// Código para inserir, atualizar, excluir ou buscar dados
+?>
+
+
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Login</h2>
-        <a href="../index.html" class="btn btn-primary mt-3" style="margin-bottom: 5%;">Voltar</a>
+        <a href="../index.php" class="btn btn-primary mt-3" style="margin-bottom: 5%;">Voltar</a>
         <div class="form-login">
             <form id="loginForm">
                 <div class="mb-3">
@@ -27,7 +34,7 @@
                     <button type="submit" class="btn btn-primary">Login</button>
                 </div>
                 <div class="mt-3 text-center">
-                    <a href="novaConta.html" class="text-muted">Criar nova conta</a>
+                    <a href="novaConta.php" class="text-muted">Criar nova conta</a>
                     <br>
                     <a href="#" class="text-muted">Esqueci minha senha</a>
                 </div>
@@ -38,6 +45,7 @@
     </div>
 
     <script src="../script/login.js"></script> <!-- Referência ao arquivo JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
