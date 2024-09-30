@@ -1,5 +1,5 @@
 // Script para adicionar mais campos de imagem
-let imageCount = 5;
+let imageCount = 3;
 document.getElementById('add-more-images').addEventListener('click', function() {
     imageCount++;
     const newField = document.createElement('div');

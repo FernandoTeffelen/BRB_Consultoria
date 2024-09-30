@@ -1,11 +1,12 @@
 /* Geral */
 body {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Cor de fundo uniforme */
     font-family: 'Arial', sans-serif;
 }
 
+/* Estilo do formulário */
 .container-form {
-    max-width: 800px;
+    max-width: 1500px; /* Ampla para acomodar duas colunas */
     margin: 0 auto;
     padding: 20px;
 }
@@ -14,14 +15,26 @@ h1, h2 {
     color: #343a40;
     text-align: center;
     font-weight: 700;
-    margin-bottom: 30px;
 }
 
+/* Estilo do Booking Form */
 .booking-form {
-    background-color: #ffffff;
+    background-color: #f4f4f4; /* Fundo uniforme */
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0; /* Remover bordas */
+}
+
+/* Divisão do formulário em duas colunas */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-column {
+    flex: 1; /* Preencher igualmente */
+    min-width: 300px; /* Mínimo para responsividade */
+    margin: 10px;
 }
 
 /* Estilo do formulário */
@@ -30,7 +43,9 @@ form label {
     color: #495057;
 }
 
-form input[type="text"], form input[type="email"], form input[type="file"] {
+form input[type="text"],
+form input[type="email"],
+form input[type="file"] {
     border: 2px solid #ced4da;
     border-radius: 5px;
     padding: 10px;
@@ -40,7 +55,9 @@ form input[type="text"], form input[type="email"], form input[type="file"] {
     transition: border-color 0.3s ease-in-out;
 }
 
-form input[type="text"]:focus, form input[type="email"]:focus, form input[type="file"]:focus {
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="file"]:focus {
     border-color: #007bff;
     outline: none;
 }
@@ -62,24 +79,24 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Lista de dados enviados */
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Lista de imóveis */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebra de linha */
+    justify-content: center; /* Centraliza os itens */
+    
 }
 
-ul li {
-    margin-bottom: 20px;
-    font-size: 16px;
+.col-md-3 {
+    margin: 10px; /* Espaçamento entre os cartões */
 }
 
-ul li img {
-    margin-top: 10px;
-    border-radius: 5px;
-    width: 100px;
+.carousel-inner img {
+    width: 100%;
+    object-fit: cover; /* Ajuste da imagem sem distorção */
 }
 
-/* Botão de Voltar */
+/* Estilo do botão de voltar */
 .btn-primary {
     background-color: #6c757d;
     border: none;
@@ -89,4 +106,45 @@ ul li img {
 
 .btn-primary:hover {
     background-color: #343a40;
+}
+
+/* Estilo de cartões */
+.card-body {
+    text-align: center; /* Centraliza o texto dentro do cartão */
+}
+
+.card-footer {
+    background-color: transparent; /* Fundo transparente para o rodapé */
+}
+
+
+
+
+/* Container geral para os imóveis */
+.imoveis-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza as colunas de imóveis */
+    margin-top: 20px;
+}
+
+/* Estilo dos cartões de imóveis */
+.imovel-card {
+    margin: 10px; /* Espaçamento entre os cartões */
+    height: 450px; /* Definindo altura dos cartões */
+    width: 300px;
+    width: 300px; /* Largura fixa para os cartões */
+    text-align: center; /* Centraliza o texto dentro do cartão */
+}
+
+/* Estilo do cabeçalho */
+h1 {
+    text-align: center; /* Centraliza o título "Dados Enviados:" */
+}
+
+/* Ajustes de imagem dentro dos cartões */
+.imovel-card img {
+    max-width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 5px; /* Bordas arredondadas para a imagem */
 }

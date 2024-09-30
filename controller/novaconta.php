@@ -1,43 +1,38 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<?php
+include '../connect/db_connection.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="cadastro.css">
-</head>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $confirmarSenha = $_POST['confirmarSenha'];
 
-<body>
-    <div class="container mt-5">
-        <h2 class="text-center">Criar Nova Conta</h2>
-        <form id="signupForm">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" name="nome" placeholder="Nome" required>
-            </div>
-            <div class="mb-3">
-                <label for="nome" class="form-label">E-mail</label>
-                <input type="email" class="form-control" name="email" placeholder="E-mail" required>
-            </div>
-            <div class="mb-3">
-                <label for="nome" class="form-label">Senha</label>
-                <input type="password" class="form-control" name="senha" placeholder="Senha" required>
-            </div>
-            <div class="mb-3">
-                <label for="nome" class="form-label">Confirmar senha</label>
-                <input type="password" class="form-control" name="confirmarSenha" placeholder="Confirmar Senha" required>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Criar Conta</button><br>
-                <a href="login.php" class="btn btn-primary mt-3" style="margin-bottom: 5%;">Voltar</a>
-            </div>
-        </form>
-    </div>
+    if ($senha !== $confirmarSenha) {
+        echo "<script>alert('As senhas não coincidem.'); window.location.href='../views/novaConta.html';</script>";
+    } else {
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    <script src="../script/signup.js"></script> <!-- Referência ao arquivo JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        // Verifica se o email já existe na tabela "conta"
+        $sql = "SELECT * FROM contas WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-</html>
+        if ($result->num_rows > 0) {
+            echo "<script>alert('Já existe uma conta com esse e-mail.'); window.location.href='../views/novaConta.html';</script>";
+        } else {
+            // Insere o novo usuário na tabela "conta"
+            $sql = "INSERT INTO conta (nome, email, senha) VALUES (?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sss", $nome, $email, $senhaHash);
+
+            if ($stmt->execute()) {
+                echo "<script>alert('Conta criada com sucesso!'); window.location.href='../views/login.html';</script>";
+            } else {
+                echo "<script>alert('Erro ao criar a conta.'); window.location.href='../views/novaConta.html';</script>";
+            }
+        }
+    }
+}
+?>
