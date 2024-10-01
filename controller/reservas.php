@@ -207,6 +207,16 @@
                         <button type="button" class="btn btn-secondary mt-3" id="add-more-edit-images">Mais Imagens</button>
                         <button type="submit" class="btn btn-primary mt-3">Salvar Alterações</button>
                     </form>
+
+                    <h5>Imagens do Imóvel:</h5>
+                    <div class='image-preview-container'>
+                        <?php foreach ($images as $image): ?>
+                            <div class='image-preview' style='position: relative; display: inline-block; margin-right: 10px;'>
+                                <img src='../uploads/<?php echo htmlspecialchars($image); ?>' alt='Image' style='width: 100px; height: auto;'>
+                                <button class='btn btn-danger btn-sm' style='position: absolute; top: 0; right: 0;' onclick='removeImage(<?php echo $row['id']; ?>, "<?php echo htmlspecialchars($image); ?>")'>X</button>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -262,6 +272,10 @@
             document.getElementById('editImageFields').appendChild(editImageFields);
         });
     </script>
+    <!-- Referência ao arquivo JavaScript -->
+    <script src="../script/reservas.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
